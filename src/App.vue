@@ -26,7 +26,5 @@ export default {
 <style lang="scss" scoped>
   @import './style/variables';
   @import './style/general';
-  h1{
-    color: $bgazzurro;
-  }
+  
 </style>

@@ -5,6 +5,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+@mixin my-flex{
+    display: flex;
+    align-items: center;
+}
 body{
     font-family: 'Roboto', sans-serif;
 }
