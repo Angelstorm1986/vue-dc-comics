@@ -5,9 +5,9 @@
     </div>
     <nav>
       <ul>
-        <li v-for="item in links" :key="item">
+        <li v-for="choice in choices" :key="choice">
           <a href="#">
-            <div class="choice-button">{{item}}</div>
+            <div class="choice-button" :class="{ active : choice.active }">{{choice.text}}</div>
           </a>
         </li>
       </ul>
@@ -20,17 +20,47 @@ export default {
   name: 'AppHeader',
   data() {
     return {
-      links: [
-        "Characters",
-        "Comics",
-        "Movies",
-        "Tv",
-        "Games",
-        "Collectibles",
-        "Videos",
-        "Fans",
-        "News",
-        "Shop"
+      choices: [
+        {
+          text: "Characters",
+          active: false
+        },
+        {
+          text: "Comics",
+          active: true
+        },
+        {
+          text: "Movies",
+          active: false
+        },
+        {
+          text: "Tv",
+          active: false
+        },
+        {
+          text: "Games",
+          active: false
+        },
+        {
+          text: "Collectibles",
+          active: false
+        },
+        {
+          text: "Videos",
+          active: false
+        },
+        {
+          text: "Fans",
+          active: false
+        },
+        {
+          text: "News",
+          active: false
+        },
+        {
+          text: "Shop",
+          active: false
+        }
       ]
     }
   }
@@ -61,18 +91,29 @@ export default {
         position: relative;
         display: flex;
         justify-content: center;
-        &:hover{
-          color: $colortextactive;
-          &::after{
-            position: absolute;
-            bottom: 0;
-            content: '';
-            width: 100%;
-            height: 3px;
-            background-color: $colortextactive;
-          }
-        }
+        // &:hover{
+        //   color: $colortextactive;
+        //   &::after{
+        //     position: absolute;
+        //     bottom: 0;
+        //     content: '';
+        //     width: 100%;
+        //     height: 3px;
+        //     background-color: $colortextactive;
+        //   }
+        // }
       }
+    }
+  }
+  .active{
+    color: $colortextactive;
+    &::after{
+      position: absolute;
+      bottom: 0;
+      content: '';
+      width: 100%;
+      height: 3px;
+      background-color: $colortextactive;
     }
   }
 </style>
