@@ -1,23 +1,21 @@
 <template>
   <div id="app">
     <app-header/>
-    <main>
-      <app-grid/>
-    </main>
+    <app-characters/>
     <app-footer/>
   </div>
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue'
-import AppGrid from './components/AppGrid.vue'
+import AppCharacters from './components/AppCharacters.vue'
 import AppFooter from './components/AppFooter.vue'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AppGrid,
+    AppCharacters,
     AppFooter
   }
 }
