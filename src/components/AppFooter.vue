@@ -2,7 +2,7 @@
     <footer>
         <div class="products">
             <div class="list" v-for="(prodotto, index) in products" :key="index">
-                <img src="{'../assets/images/' + prodotto.image}" :alt="prodotto.nome">
+                <img :src="prodotto.image" width="30" height="30" :alt="prodotto.nome">
                 <span>{{prodotto.nome}}</span>
             </div>
         </div>
@@ -45,66 +45,66 @@
 export default {
     name: 'AppFooter',
     data() {
-    return {
-      products: [
-        {
-            image: "buy-comics-digital-comics.png",
-            nome: "Digital Comics"
-        },
-        {
-            image: "buy-comics-merchandise.png",
-            nome: "DC Merchandise"
-        },
-        {
-            image: "buy-comics-subscription.png",
-            nome: "Subscription"
-        },
-        {
-            image: "buy-comics-shop-locator.png",
-            nome: "Comic shop locator"
-        },
-        {
-            image: "buy-dc-power-visa.png",
-            nome: "DC Power visa"
+        return {
+            products: [
+                {
+                    image: "./images/buy-comics-digital-comics.png",
+                    nome: "Digital Comics"
+                },
+                {
+                    image: "./images/buy-comics-merchandise.png",
+                    nome: "DC Merchandise"
+                },
+                {
+                    image: "./images/buy-comics-subscriptions.png",
+                    nome: "Subscription"
+                },
+                {
+                    image: "./images/buy-comics-shop-locator.png",
+                    nome: "Comic shop locator"
+                },
+                {
+                    image: "./images/buy-dc-power-visa.svg",
+                    nome: "DC Power visa"
+                }
+            ],
+            world: [
+                "Characters", 
+                "Comics",
+                "Movies",
+                "Tv",
+                "Games",
+                "Collectibles",
+                "Videos",
+                "Fans",
+                "News"
+            ],
+            all: [
+                "Terms Of Use", 
+                "Privacy policy (New)",
+                "Ad Choices",
+                "Advertising",
+                "Jobs",
+                "Subscriptions",
+                "Talent Workshops",
+                "CPSC Certificates",
+                "Ratings",
+                "Shop Help",
+                "Contact Us"
+            ],
+            sites: [
+                "DC", 
+                "MAD Magazine",
+                "DC Kids",
+                "DC Universe",
+                "DC Power Visa"
+            ],
+            shop: [
+                "Shop DC",
+                "Shop DC Collectibles" 
+            ]
         }
-      ],
-      world: [
-        "Characters", 
-        "Comics",
-        "Movies",
-        "Tv",
-        "Games",
-        "Collectibles",
-        "Videos",
-        "Fans",
-        "News"
-      ],
-      all: [
-        "Terms Of Use", 
-        "Privacy policy (New)",
-        "Ad Choices",
-        "Advertising",
-        "Jobs",
-        "Subscriptions",
-        "Talent Workshops",
-        "CPSC Certificates",
-        "Ratings",
-        "Shop Help",
-        "Contact Us"
-      ],
-      sites: [
-        "DC", 
-        "MAD Magazine",
-        "DC Kids",
-        "DC Universe",
-        "DC Power Visa"
-      ],
-      shop: [
-        "Shop DC",
-        "Shop DC Collectibles" 
-      ]
     }
-  }
 }
 </script>
 
@@ -120,6 +120,9 @@ export default {
 }
 .list{
     @include my-flex;
+    span{
+        padding-left: 10px;
+    }
 }
 .alldc{
     @include my-flex;
