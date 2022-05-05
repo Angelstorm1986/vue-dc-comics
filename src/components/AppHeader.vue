@@ -5,9 +5,11 @@
     </div>
     <nav>
       <ul>
-        <li v-for="(item, index) in links" :key="index">
+        <li v-for="item in links" :key="item">
           <a href="#">
-            <div class="choice-button">{{item.testo}}</div></a></li>
+            <div class="choice-button">{{item}}</div>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -19,46 +21,16 @@ export default {
   data() {
     return {
       links: [
-        {
-          testo: "Characters",
-          active: false
-        },
-        {
-          testo: "Comics",
-          active: true
-        },
-        {
-          testo: "Movies",
-          active: false
-        },
-        {
-          testo: "Tv",
-          active: false
-        },
-        {
-          testo: "Games",
-          active: false
-        },
-        {
-          testo: "Collectibles",
-          active: false
-        },
-        {
-          testo: "Videos",
-          active: false
-        },
-        {
-          testo: "Fans",
-          active: false
-        },
-        {
-          testo: "News",
-          active: false
-        },
-        {
-          testo: "Shop",
-          active: false
-        }
+        "Characters",
+        "Comics",
+        "Movies",
+        "Tv",
+        "Games",
+        "Collectibles",
+        "Videos",
+        "Fans",
+        "News",
+        "Shop"
       ]
     }
   }
@@ -66,17 +38,15 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import '../style/variables';
   @import '../style/general';
   header{
     height: 120px;
     @include my-flex;
-    justify-content: space-around;
   }
   ul{
     @include my-flex;
-    justify-content: center;
     line-height: 120px;
   }
   li{
@@ -84,6 +54,7 @@ export default {
       padding: 0 10px;
     a{
       text-decoration: none;
+      text-transform: uppercase;
       color: $colortextheader;
       font-weight: bold;
       .choice-button{
@@ -91,14 +62,14 @@ export default {
         display: flex;
         justify-content: center;
         &:hover{
-          color: $coloractive;
+          color: $colortextactive;
           &::after{
             position: absolute;
             bottom: 0;
             content: '';
             width: 100%;
             height: 3px;
-            background-color: $coloractive;
+            background-color: $colortextactive;
           }
         }
       }
